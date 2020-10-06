@@ -9,7 +9,7 @@ vk = vk_api.VkApi(token=token)
 vk._auth_token()
 
 while True:
-    #главный цикл
+    
     messages = vk.method ("messages.getConversations", {"offset": 0, "count": 20, "filter": "unread"})
     if messages["count"] >= 1:
         id = messages["items"][0]["last_message"]["from_id"]
